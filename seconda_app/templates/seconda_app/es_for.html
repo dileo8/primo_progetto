@@ -1,5 +1,14 @@
 <html>
 <body>
+    
+</body>
+</html>
+
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Es for {%endblock title%}
+
+{%block content%}
     cicla una sequenza usando <b>forloop.counter</b>
     <br/>
     {% for x in list2 %}
@@ -45,5 +54,11 @@
      {% for x in list2 reversed %}
         <i>Elemento</i> - {{ x }}<br/>
     {% endfor %}
-</body>
-</html>
+
+    <h2>Contenuto del dizionario:</h2>
+    <ul>
+        {% for key, value in my_dict.items %}
+            <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+    </ul>
+{%endblock content%}

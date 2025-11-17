@@ -10,3 +10,12 @@
     <h1>WELCOME!!!</h1>
 </body>
 </html>
+
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Welcome {%endblock title%}
+
+{%block content%}
+    <h1>Welcome</h1>
+    <p>Welcome!</p>
+{%endblock content%}
