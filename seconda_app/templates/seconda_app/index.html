@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
-</head>
-<body>
-    <ol>
-        <li><a href="{% url 'seconda_app:es_for'%}">Es for</a></li>
-        <li><a href="{% url 'seconda_app:es_if'%}">Es if</a></li>
+{% extends "base.html" %}
+
+{%block title%} {{block.super}} | Seconda app {%endblock title%}
+
+{%block content%}
+ <ol>
+        <li><a href="{% url 'seconda_app:es_for'%}">es_for</a></li>
+        <li><a href="{% url 'seconda_app:es_if'%}">es_if</a></li>
         <li><a href="{% url 'seconda_app:if_else_elif'%}">if else elif</a></li>
-    </ol>
-</body>
-</html>
+    </ol>    
+{%endblock content%}

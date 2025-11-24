@@ -12,17 +12,29 @@
     <title>{% block title %} Primo progetto {% endblock title %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+   <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Primo progetto</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      
+      
+       <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            seconda App
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="{% url 'seconda_app:es_for'%}">es_for</a>
+              <a class="dropdown-item" href="{% url 'seconda_app:es_if'%}">es_if</a>
+              <a class="dropdown-item" href="{% url 'seconda_app:if_else_elif'%}">if else elif</a>
+            </div>
+          </li>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Prima App
+            prima App
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="{% url 'prima_app:homepage'%}">Home page benvenuto</a>
@@ -32,21 +44,20 @@
               <a class="dropdown-item" href="{% url 'prima_app:variabili'%}">Variabili</a>
             </div>
           </li>
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Seconda App
+            prova pratica 1
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{% url 'seconda_app:es_if'%}">Es con if</a>
-              <a class="dropdown-item" href="{% url 'seconda_app:es_for'%}">Es con for</a>
-              <a class="dropdown-item" href="{% url 'seconda_app:if_else_elif'%}">Es con if else elif</a>
+              <a class="dropdown-item" href="{% url 'prova_pratica_1:differenza'%}">differenza</a>
+              <a class="dropdown-item" href="{% url 'prova_pratica_1:differenza:pari_dispari'%}">pari dispari</a>
+              
             </div>
           </li>
-        </ul>
-      </div>
-
-    
-    </nav>
+    </ul>
+  </div>
+</nav>
 
   <div class="container my-4">
     <!--Per inserire i contenuti della pagina-->
