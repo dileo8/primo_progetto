@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Articolo, Giornalista
+import datetime
 
 def home(request):
     a = ""
@@ -97,5 +98,4 @@ def queryBase(request):
         'ultimi': ultimi,
         'articoli_minime_visualizzazioni': articoli_minime_visualizzazioni,
         'articoli_parola': articoli_parola
-            
     }
