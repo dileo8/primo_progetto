@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProvaPratica1Config(AppConfig):
+class NewsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'prova_pratica1'
+    name = 'news'
