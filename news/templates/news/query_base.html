@@ -1,0 +1,137 @@
+{% extends "base.html" %}
+
+{% block title %}
+Query Base
+{% endblock %}
+
+{% block content %}
+
+<h1>Query Base – Articoli e Giornalisti</h1>
+
+<hr>
+
+<h3>1. Articoli scritti da giornalisti con cognome "Rossi"</h3>
+{% for articolo in articoli_cognome %}
+    <p><strong>{{ articolo.titolo }}</strong> – {{ articolo.giornalista }}</p>
+{% empty %}
+    <p>Nessun articolo trovato</p>
+{% endfor %}
+
+<hr>
+
+<h3>2. Numero totale articoli</h3>
+<p>{{ numero_totale_articoli }}</p>
+
+<hr>
+
+<h3>3. Numero articoli del giornalista ID 2</h3>
+<p>{{ giornalista_1 }}: {{ numero_articoli_giornalista_1 }}</p>
+
+<hr>
+
+<h3>4. Articoli ordinati per visualizzazioni (decrescente)</h3>
+{% for articolo in articoli_ordinati %}
+    <p>{{ articolo.titolo }} – {{ articolo.visualizzazioni }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>5. Articoli senza visualizzazioni</h3>
+{% for articolo in articoli_senza_visualizzazioni %}
+    <p>{{ articolo.titolo }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>6. Articolo più visualizzato</h3>
+{% if articolo_piu_visualizzato %}
+    <p>
+        {{ articolo_piu_visualizzato.titolo }}
+        ({{ articolo_piu_visualizzato.visualizzazioni }})
+    </p>
+{% else %}
+    <p>Nessun articolo</p>
+{% endif %}
+
+<hr>
+
+<h3>7. Giornalisti nati dopo il 1990</h3>
+{% for g in giornalisti_data %}
+    <p>{{ g.nome }} {{ g.cognome }} – {{ g.anno_di_nascita }}</p>
+{% empty %}
+    <p>Nessun giornalista</p>
+{% endfor %}
+
+<hr>
+
+<h3>8. Articoli pubblicati il 01/01/2023</h3>
+{% for articolo in articoli_del_giorno %}
+    <p>{{ articolo.titolo }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>9. Articoli pubblicati nel 2023</h3>
+{% for articolo in articoli_periodo %}
+    <p>{{ articolo.titolo }} – {{ articolo.data }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>10. Articoli di giornalisti nati prima del 1980</h3>
+{% for articolo in articoli_giornalisti %}
+    <p>{{ articolo.titolo }} – {{ articolo.giornalista }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>11. Giornalista più giovane</h3>
+{% if giornalista_giovane %}
+    <p>{{ giornalista_giovane.nome }} {{ giornalista_giovane.cognome }}</p>
+{% endif %}
+
+<hr>
+
+<h3>12. Giornalista più anziano</h3>
+{% if giornalista_anziano %}
+    <p>{{ giornalista_anziano.nome }} {{ giornalista_anziano.cognome }}</p>
+{% endif %}
+
+<hr>
+
+<h3>13. Ultimi 5 articoli pubblicati</h3>
+{% for articolo in ultimi %}
+    <p>{{ articolo.titolo }} – {{ articolo.data }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>14. Articoli con almeno 100 visualizzazioni</h3>
+{% for articolo in articoli_mimime_visualizzazioni %}
+    <p>{{ articolo.titolo }} – {{ articolo.visualizzazioni }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+<hr>
+
+<h3>15. Articoli con "importante" nel titolo</h3>
+{% for articolo in articoli_parola %}
+    <p>{{ articolo.titolo }}</p>
+{% empty %}
+    <p>Nessun articolo</p>
+{% endfor %}
+
+{% endblock %}

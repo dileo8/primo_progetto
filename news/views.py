@@ -17,7 +17,7 @@ def home(request):
 def articoloDetailView(request, pk):
     articolo = get_object_or_404(Articolo, pk=pk)
     context = {"articolo": articolo}
-    return render(request, "articolo_detail.html", context)
+    return render(request, "news/articolo_detail.html", context)
 
 def listaArticoli (request, pk=None):
     if pk==None:
@@ -28,18 +28,19 @@ def listaArticoli (request, pk=None):
         'articoli': articoli,
     }
    
-    return render(request, 'lista_articoli.html', context)
+    return render(request, 'news/lista_articoli.html', context)
 
+def index(request):
+        return render(request, "news/index.html")
 
-
-def queryBase(request):
+def query_base(request):
     #1 Tutti gli articoli scritti da giornalisti di un certo cognome:
-    articoli_cognome = Articolo.objects.filter(giornalista_cognome='Rossi')
+    articoli_cognome = Articolo.objects.filter(giornalista__cognome='Rossi')
     #2 Totale
     numero_totale_articoli = Articolo.objects.count()
     
     #3 Contare il numero di articoli scritti da un giornalista specifico:
-    giornalista_1 = Giornalista.objects.get(id=1)
+    giornalista_1 = Giornalista.objects.get(id=4)
     numero_articoli_giornalista_1 = Articolo.objects.filter(giornalista=giornalista_1).count()
     
     #4 Ordinare gli articoli per numero di visualizzazioni in ordine decrescente:
@@ -99,3 +100,7 @@ def queryBase(request):
         'articoli_minime_visualizzazioni': articoli_minime_visualizzazioni,
         'articoli_parola': articoli_parola
     }
+    
+    
+    return render(request, 'news/query_base.html', context)
+    
