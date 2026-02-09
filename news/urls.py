@@ -10,6 +10,6 @@ urlpatterns = [
     path("lista_articoli", listaArticoli, name="lista_articoli"),
     path('', index, name="index"),
     path('query_base', query_base, name="query_base"),
-     path("giornalista/<int:pk>", giornalistaDetailView, name="giornalista_detail"),
+    path("giornalista/<int:pk>", giornalistaDetailView, name="giornalista_detail"),
     
 ]

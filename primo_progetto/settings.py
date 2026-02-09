@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'prima_app',
     'seconda_app',
     'news',
+    'voti',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -61,6 +62,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR,'templates'),
                  os.path.join(BASE_DIR,'seconda_app/templates/seconda_app'),
                  os.path.join(BASE_DIR,'news/templates/news'),
+                 os.path.join(BASE_DIR,'voti/templates/voti'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
