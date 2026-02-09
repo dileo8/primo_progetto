@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% comment%}
 {% block title %}
     titolo
 {% endblock title %}
@@ -9,5 +9,29 @@
     <h1>{{ articolo.titolo }}</h1>
     <h3>{{ articolo.contenuto }}</h3>
     <h5>Autore: {{ articolo.giornalista }}</h5>
+    {% endfor %}
+{% endblock content %}
+
+{% extends 'base.html' %}
+{% endcomment%}
+
+{% block title %}
+    titolo
+{% endblock title %}
+
+{% block content %}
+    {% for articolo in articoli %}
+        <p><strong>Titolo: </strong>
+            {% comment %} metodo non ottimale per creare link {% endcomment %}
+            <a href="/news/articoli/{{ articolo.id }}">{{ articolo.titolo }}</a>
+        </p>
+        <p><strong>Contenuto: </strong>
+            {{ articolo.contenuto }}
+        </p>
+        <p><strong>Autore: </strong>
+            {% comment %} metodo corretto per creare link {% endcomment %}
+            <a href={% url 'news:giornalista_detail' articolo.giornalista.id %}>{{ articolo.giornalista }}</a>
+        </p>
+        <hr>
     {% endfor %}
 {% endblock content %}
