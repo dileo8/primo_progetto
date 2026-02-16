@@ -31,6 +31,7 @@
         <p><strong>Autore: </strong>
             {% comment %} metodo corretto per creare link {% endcomment %}
             <a href={% url 'news:giornalista_detail' articolo.giornalista.id %}>{{ articolo.giornalista }}</a>
+            
         </p>
         <hr>
     {% endfor %}

@@ -16,7 +16,8 @@
         <li>
         <span class="label">Titolo:</span> 
         <a href="{% url 'news:articolo_detail' articolo.pk %}">{{ articolo.titolo }}</a>
-        </li>
+        - {{ articolo.visualizzazioni }}
+    </li>
     {% empty %}
         <li>Non ci sono articoli per questo giornalista.</li>
     {% endfor %}
