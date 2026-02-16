@@ -21,3 +21,46 @@ def view_b(request):
     }
     return render(request, "voti/view_b.html", context)
 
+def view_c(request):
+    medie = {}
+    
+    for studente, dati in voti.items():
+        somma = 0
+        i = 0
+        for materia, voto, assenza in dati:
+            somma+=voto
+            i+=1
+        media = somma/i
+        medie[studente] = media
+        
+    context = {
+        "medie":medie
+    }
+    
+    return render(request, "voti/view_c.html", context)
+
+def view_d(request):
+    max = 0
+    min = 11
+    votiMax =[]
+    votiMin = []
+    
+    for studente, dati in voti.items():
+        for materia, voto, assenza in dati:
+            if voto > max:
+                max = voto
+            elif voto < min:
+                min = voto
+                
+    for studente, dati in voti.items():
+        for materia, voto, assenza in dati:
+            if voto == max:
+                votiMax.append((materia, studente))
+            elif voto == min:
+                votiMin.append((materia, studente))
+    context = {"max": max,
+               "min": min,
+               "votiMax": votiMax,
+               "votiMin": votiMax,
+               }
+    return render(request, "voti/view_d.html", context)

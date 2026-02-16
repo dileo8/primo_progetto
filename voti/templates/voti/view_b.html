@@ -8,7 +8,7 @@
     {% for studente, dati in voti.items %}
         <p><strong>studente: </strong>{{ studente }}</p>
             {% for materia, voto, assenza in dati %}
-                <ul><strong></strong>{{ materia }}, {{ voto }}, {{ assenza }}</ul>
+                <ul>{{ materia }}, {{ voto }}, {{ assenza }}</ul>
             {% endfor %}
     {% endfor %}
 {% endblock content %}

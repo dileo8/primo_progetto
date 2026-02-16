@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    VOTO MASSIMO, MINIMO CON LE RISPETTIVE MATERIE E STUDENTI
+{% endblock title %}
+{% block content %}
+
+    <p><strong>VOTO MASSIMO: {{max}}</strong></p>
+    {% for materia, studente in votiMax %}
+        <p>materia: {{ materia }}, studente: {{ studente }}
+    {% endfor %}
+            
+    <p><strong>VOTO MINIMO: {{min}}</strong></p>
+    {% for materia, studente in votiMin %}
+        <p>materia: {{ materia }}, studente: {{ studente }}
+    {% endfor %}
+
+{% endblock content %}
