@@ -35,6 +35,9 @@ INSTALLED_APPS = [
     'seconda_app',
     'news',
     'voti',
+    'forms_app',
+    'crispy_forms',
+    'crispy_bootstrap4',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -63,6 +66,7 @@ TEMPLATES = [
                  os.path.join(BASE_DIR,'seconda_app/templates/seconda_app'),
                  os.path.join(BASE_DIR,'news/templates/news'),
                  os.path.join(BASE_DIR,'voti/templates/voti'),
+                 os.path.join(BASE_DIR,'voti/templates/forms_app'),
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -129,3 +133,4 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
