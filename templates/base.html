@@ -68,6 +68,7 @@
               </div>
           </li>
 
+
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Contatti
@@ -78,20 +79,8 @@
                    
               </div>
           </li>
-    </ul>
-  </div>
-</nav>
 
-  <div class="container my-4">
-    <!--Per inserire i contenuti della pagina-->
-    {%block content%}
-    {%endblock content%}
-    <!--Per inserie il codice javascript-->
-    {%block script%}
-    {%endblock script%}
-
-   
-    {% if request.user.is_authenticated %}
+          {% if request.user.is_authenticated %}
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -107,12 +96,29 @@
         </li>
     {% else %}
         <li class="nav-item">
+          <a class="nav-link" href="{% url 'signup' %}">registrati</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="{% url 'login' %}">Login</a>
         </li>
     {% endif %}
 
+          
+    </ul>
   </div>
-    <!-- Optional JavaScript; choose one of the two! -->
+</nav>
+
+    <!--Per inserire i contenuti della pagina-->
+    {%block content%}
+    {%endblock content%}
+    <!--Per inserie il codice javascript-->
+    {%block script%}
+    {%endblock script%}
+
+   
+    
+
+      <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
